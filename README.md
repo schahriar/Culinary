@@ -39,19 +39,34 @@ Scrolls the content by a single line. Useful for modifications to native logs.
 #### nextLine()
 Moves to the next line. Similar behavior as "\n".
 
-### save(), restore()
+#### save(), restore()
 Allows for saving and restoration of the current cursor position. There is currently no way (that I am aware of) that enables multiple saves and restoration. **Use it wisely!**
 
-### clearScreen(direction:String), cls()
+#### clearScreen(direction:String), cls()
 Allows for clearing content relative to the direction or entirely. **Direction** can be set **up**, **down** or **entire** to clear the entire console screen.
 
-### eraseLine(direction:String), clearLine(direction:String)
+#### eraseLine(direction:String), clearLine(direction:String)
 Allows for clearing line content relative to the direction or entirely. **Direction** can be set **left**, **right** or **entire** to clear the entire line.
 
+#### bell() - Ring it!
+
 ## Colors & Spices
+As an addition to **Culinary** you can add styles to Strings. Simply assign **culinary.style** and use the **.spice()** method or one of the aliases (addStyle, addStyles, setStyle, setStyles).
+
+#### spice(color:String ... spice:String)
+There are no limits to how many colors or spices you can add to a string as long as it matches one of the options below:
+
 - **Colors:** Black, White, Green, Blue, Cyan, Magenta, Red, Yellow
 - **Backgrounds:** bgBlack, bgWhite, bgGreen, bgBlue, bgCyan, bgMagenta, bgRed, bgYellow
 - **Spices:** bold, underline, italic, **hidden**, invert, reset
+
+#### e.g.
+```javascript
+var culinary = require('culinary');
+var style = culinary.style;
+
+culinary.write(style("Super text!").spice("red","bold","bgWhite","italic")).nextLine();
+```
 
 ## Contributing
 If you are interested you can contact me directly at <info@schahriar.com>!
