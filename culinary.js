@@ -32,7 +32,8 @@ var culinary = {
 	
 	scrollUp: function(){ return this.execute("D", false) },
 	scrollDown: function(){ return this.execute("M", false) },
-	
+
+	cursorTo: function(position) { process.stdout.cursorTo(position); return this; },	
 	nextLine: function(){ return this.execute("E", false) },
 	
 	save: function(){ return this.execute("s") },
