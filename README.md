@@ -2,7 +2,7 @@
 
 Add advanced command-line interface to your NodeJS program with **Culinary**!
 ======
-**Culinary** is an advanced module that mostly takes care of all ANSI tasks of NodeJS using a common programming interface. The main purpose of this package is to serve [herb](www.npmjs.com/package/herb) for low-level console manipulation so I highly recommend that you check it out but if you need direct access to the CLI without any layers on top then Culinary is for you!
+**Culinary** is an advanced module that mostly takes care of all ANSI tasks of NodeJS using a common programming interface. The main purpose of this package is to serve [herb](http://www.npmjs.com/package/herb) for low-level console manipulation so I highly recommend that you check it out but if you need direct access to the CLI without any layers on top then Culinary is for you!
 
 ## Installation
 ```javascript
@@ -29,7 +29,7 @@ culinary.write(style((new Date()).toString()).spice("green","bold")).restore();
 
 ## Methods
 #### write(string:String) 
-Similar to *console.log* but does not create a new line or accept more than a String argument. For more advanced writing check out [herb](www.npmjs.com/package/herb)
+Similar to *console.log* but does not create a new line or accept more than a String argument. For more advanced writing check out [herb](http://www.npmjs.com/package/herb)
 
 #### up(n:Integer), down(n:Integer), back(n:Integer), forth(n:Integer)
 Allows you to move the cursor **n** number of times relative to its current position. Other aliases for *back* and *forth* are **left** and **right**.
