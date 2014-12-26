@@ -39,6 +39,11 @@ var culinary = {
 	save: function(){ return this.execute("s") },
 	restore: function(){ return this.execute("u") },
 
+	_cursor: function(hide){
+		if(hide) return this.execute("?25h");
+		else return this.execute("?25l");
+	},
+
 	_custom: function(character, prepend, append, hasAttributes){ return this.execute(prepend + character + append, hasAttributes) },
 
 	bell: function(){ return this.write("\x07");  },
@@ -70,8 +75,7 @@ var culinary = {
 	execute: function(command, prepend){
 		var prepend = (prepend == false)?"":this._bracket;
 		// Creates new buffer and decodes command using punnycode		
-		this.write(this._decode(prepend+command));
-		return this;
+		return this.write(this._decode(prepend+command));;
 	},
 
 	_bracket: "[",
@@ -90,6 +94,9 @@ culinary.endLine = culinary.nextLine;
 culinary.size = culinary.dimensions;
 culinary.left = culinary.back;
 culinary.right = culinary.forth;
+
+culinary.hideCursor = function() { culinary.cursor(true) };
+culinary.showCursor = function() { culinary.cursor(false) };
 //
 
 module.exports = culinary;
