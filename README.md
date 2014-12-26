@@ -43,6 +43,10 @@ Moves to the next line. Similar behavior as "\n".
 #### save(), restore()
 Allows for saving and restoration of the current cursor position. There is currently no way (that I am aware of) that enables multiple saves and restoration. **Use it wisely!**
 
+#### cursor(visible:Boolean), hideCursor(), showCursor()
+Allows for manipulation of cursor state between **visible** & **hidden**.
+**WARNING: If cursor state is not set to *visible* before the application is closed the cursor will remain hidden. This will have a negative User Experience effect. Use it at your own discretion**
+
 #### clearScreen(direction:String), cls()
 Allows for clearing content relative to the direction or entirely. **Direction** can be set **up**, **down** or **entire** to clear the entire console screen.
 
@@ -59,7 +63,7 @@ There are no limits to how many colors or spices you can add to a string as long
 
 - **Colors:** Black, White, Green, Blue, Cyan, Magenta, Red, Yellow
 - **Backgrounds:** bgBlack, bgWhite, bgGreen, bgBlue, bgCyan, bgMagenta, bgRed, bgYellow
-- **Spices:** bold, underline, italic, **hidden**, invert, reset
+- **Spices:** bold, underline, ~~strikethrough~~ *(barely supported by clients)*, italic, **hidden**, invert, reset
 
 #### e.g.
 ```javascript
