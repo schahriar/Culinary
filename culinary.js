@@ -39,8 +39,8 @@ var culinary = {
 	save: function(){ return this.execute("s") },
 	restore: function(){ return this.execute("u") },
 
-	_cursor: function(hide){
-		if(hide) return this.execute("?25h");
+	cursor: function(show){
+		if(show != false) return this.execute("?25h");
 		else return this.execute("?25l");
 	},
 
@@ -95,8 +95,8 @@ culinary.size = culinary.dimensions;
 culinary.left = culinary.back;
 culinary.right = culinary.forth;
 
-culinary.hideCursor = function() { culinary.cursor(true) };
-culinary.showCursor = function() { culinary.cursor(false) };
+culinary.hideCursor = function() { return culinary.cursor(false) };
+culinary.showCursor = function() { return culinary.cursor(true) };
 //
 
 module.exports = culinary;
