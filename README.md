@@ -67,7 +67,9 @@ There are no limits to how many colors or spices you can add to a string as long
 - **Backgrounds:** bgBlack, bgWhite, bgGreen, bgBlue, bgCyan, bgMagenta, bgRed, bgYellow
 - **Spices:** bold, underline, ~~strikethrough~~ *(barely supported by clients)*, italic, **hidden**, invert, reset
 **Note:** Since version 1.1.4 you can apply arguments directly to style element. The goal of **culinary** is to provide low-level access and the current **spice** model did not fit the criteria yet I'll support legacy versions until the next major release.
+
 ```javascript
+
 var culinary = require('culinary');
 var style = culinary.style;
 
@@ -81,6 +83,7 @@ culinary.write(style.apply({
 // Or the easy method
 culinary.write(style("Super text!").spice("red","bold","bgWhite","italic"))
 culinary.nextLine();
+//
 ```
 
 ## Contributing
