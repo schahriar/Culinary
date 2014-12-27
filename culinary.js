@@ -3,7 +3,15 @@ var decode = require('punycode').ucs2.decode;
 var style = require('./lib/colors&spices');
 
 var culinary = {
-	style: function(string) { return new style(string, culinary._decode) } ,
+	style: function(string) {
+		// Converts arguments to Array
+        	var args = Array.prototype.slice.apply( arguments );
+		
+		if((this)&&(this.string))
+			return style.spice.apply(this, arguments);
+		else
+			return new style.cook(string)
+	} ,
 
 	write: function(string) {
 		process.stdout.write(string);
