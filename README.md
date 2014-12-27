@@ -19,11 +19,13 @@ var screen = culinary.size();
 
 // Save cursor position
 culinary.save();
-// Move cursor to the first visible line and erase that line (Commands can be chained)
-culinary.position(0, 0).eraseLine();
+// Move cursor to the last visible line and erase that line (Commands can be chained)
+culinary.position(0, screen.height).eraseLine();
 
-// Write time in bold green and restore cursor
-culinary.write(style((new Date()).toString()).spice("green","bold")).restore();
+// Write time in bold green
+culinary.write(style((new Date()).toString()).spice("green","bold"))
+// Restore cursor position
+culinary.restore();
 
 ```
 
