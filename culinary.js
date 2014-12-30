@@ -11,9 +11,7 @@ var culinary = {
 			return style.spice.apply(this, arguments);
 		else
 			return new style.cook(string)
-	},
-	
-	colors: style.colors,
+	} ,
 
 	write: function(string) {
 		process.stdout.write(string);
