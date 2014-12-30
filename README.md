@@ -63,28 +63,10 @@ As an addition to **Culinary** you can add styles to Strings. Simply assign **cu
 #### spice(color:String ... spice:String)
 There are no limits to how many colors or spices you can add to a string as long as it matches one of the options below:
 
-- **Colors:** Black, White, Green, Blue, Cyan, Magenta, Red, Yellow
+- **Colors:** Black, White, Green, Blue, Cyan, Magenta, Red, Yellow, Gray
 - **Backgrounds:** bgBlack, bgWhite, bgGreen, bgBlue, bgCyan, bgMagenta, bgRed, bgYellow
-- **Spices:** bold, underline, ~~strikethrough~~ *(barely supported by clients)*, italic, **hidden**, invert, reset
-**Note:** Since version 1.1.4 you can apply arguments directly to style element. The goal of **culinary** is to provide low-level access and the current **spice** model did not fit the criteria yet I'll support legacy versions until the next major release.
-
-```javascript
-
-var culinary = require('culinary');
-var style = culinary.style;
-
-culinary.write(style.apply({
-    string: "Put your text here",
-    background:<ANSI code>,
-    color:<ANSI code>,
-    special:<ANSI code>
-}, [array of optional spices]);
-
-// Or the easy method
-culinary.write(style("Super text!").spice("red","bold","bgWhite","italic"))
-culinary.nextLine();
-//
-```
+- **Spices:** bold, dim, italic, underline, ~~strikethrough~~ *(rarely supported by clients)*, **hidden**, inverse, reset
+**Note:** Since version 1.2.0 I've deprecated the self-implemented ANSI-Colors in **culinary** and replaced them with the [colors](https://www.npmjs.com/package/colors) module. Although the colors module itself (as **culinary.colors**) is indeed accessible using the safe method in **culinary** I highly recommend that you stick with styling through spices as they won't crash your application if the requested (color, background, style) does not exist.
 
 ## Contributing
 If you are interested you can contact me directly at <info@schahriar.com>!
